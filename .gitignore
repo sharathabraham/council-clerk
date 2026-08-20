@@ -1,4 +1,8 @@
 scraper/_pdf_cache/
+scraper/_excerpts.json
+scraper/_summaries.json
+scraper/_extract_excerpts.py
+scraper/_merge_summaries.py
 __pycache__/
 *.pyc
 .DS_Store

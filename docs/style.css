@@ -104,6 +104,21 @@ main {
   margin-top: 0.25rem;
 }
 
+.plain-summary {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0.55rem 0 0.3rem 0;
+  line-height: 1.4;
+}
+
+.legal-title {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0 0 0.4rem 0;
+  font-style: italic;
+}
+
 .meta a {
   color: var(--muted);
 }

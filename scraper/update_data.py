@@ -7,6 +7,7 @@ Safe to re-run any time - only downloads meetings not already in data/meetings.j
 """
 
 import json
+import os
 import re
 import sys
 from datetime import datetime
@@ -16,6 +17,11 @@ from urllib.parse import urljoin
 import pdfplumber
 import requests
 from bs4 import BeautifulSoup
+
+try:
+    import anthropic
+except ImportError:
+    anthropic = None
 
 BASE = "https://www.elmwoodparknj.us"
 MINUTES_URL = f"{BASE}/governing-body/minutes/minutes-2026"
@@ -257,6 +263,63 @@ def extract_title(text):
     return title
 
 
+SUMMARY_MODEL = "claude-haiku-4-5-20251001"
+
+SUMMARY_PROMPT = """You are helping a town's civic-transparency website translate a legal council resolution into plain English for an ordinary resident with no legal background.
+
+Resolution: {number}
+Category: {category}
+Legal text:
+\"\"\"
+{body}
+\"\"\"
+
+Write ONE or TWO short sentences (max ~35 words total) explaining what this resolution actually does. If the legal text states a specific dollar amount, term length, or other concrete detail, include it. Do not invent numbers, costs, or impacts that are not explicitly in the text above. Avoid legal jargon and do not just restate the formal title. Do not editorialize or take a political stance - describe, don't judge. Output ONLY the summary sentence(s), nothing else."""
+
+_client = None
+
+
+def get_anthropic_client():
+    global _client
+    if _client is None and anthropic and os.environ.get("ANTHROPIC_API_KEY"):
+        _client = anthropic.Anthropic()
+    return _client
+
+
+def extract_body_excerpt(text, max_len=1500):
+    """Trim a resolution's page text down to the substantive part - drop the
+    vote table / signature block at the end, which adds nothing useful for a
+    summary and wastes context."""
+    end = len(text)
+    for marker in ("Record of Council Vote", "APPROVED:", "I hereby certify"):
+        idx = text.find(marker)
+        if idx != -1:
+            end = min(end, idx)
+    excerpt = re.sub(r"\s+", " ", text[:end]).strip()
+    return excerpt[:max_len]
+
+
+def summarize_resolution(number, category, body_text):
+    client = get_anthropic_client()
+    if not client:
+        return None
+    try:
+        message = client.messages.create(
+            model=SUMMARY_MODEL,
+            max_tokens=150,
+            messages=[
+                {
+                    "role": "user",
+                    "content": SUMMARY_PROMPT.format(number=number, category=category, body=body_text),
+                }
+            ],
+        )
+        return message.content[0].text.strip()
+    except Exception as exc:  # noqa: BLE001 - never let a summarization failure kill the run
+        print(f"  ! plain-English summary failed for {number}: {exc}", file=sys.stderr)
+        return None
+
+
 def parse_resolution_span(text, span_pages, member_last_names):
     """Parse one resolution's fields from the combined text of the page(s) it
     spans - long resolutions (bid awards, bills lists, etc.) can run several
@@ -296,16 +359,20 @@ def parse_resolution_span(text, span_pages, member_last_names):
     if not votes:
         print(f"  ! no vote table found for {number} - check it manually", file=sys.stderr)
 
+    category = categorize(title)
+    plain_summary = summarize_resolution(number, category, extract_body_excerpt(text))
+
     return {
         "number": number,
         "title": title,
         "movedBy": moved_by,
         "secondedBy": seconded_by,
         "consentAgenda": consent,
-        "category": categorize(title),
+        "category": category,
         "ordinanceNumber": ordinance_number,
         "readingStage": reading_stage,
         "votes": votes,
+        "plainSummary": plain_summary,
     }
 
 

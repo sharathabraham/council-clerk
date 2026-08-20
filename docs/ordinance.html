@@ -41,6 +41,7 @@ async function init() {
   }
 
   const title = stages[0].title;
+  const summary = stages.find((s) => s.plainSummary)?.plainSummary;
 
   const stagesHtml = stages
     .map((r) => {
@@ -68,7 +69,7 @@ async function init() {
   content.innerHTML = `
     <div class="card">
       <h2 style="margin-top:0">Ordinance #${number}</h2>
-      <div class="meta">${title}</div>
+      ${summary ? `<p class="plain-summary">${summary}</p><p class="legal-title">${title}</p>` : `<div class="meta">${title}</div>`}
     </div>
     ${stagesHtml}
   `;

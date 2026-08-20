@@ -23,6 +23,8 @@ jobs:
         run: pip install -r scraper/requirements.txt
 
       - name: Run scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scraper/update_data.py
 
       - name: Commit updated data (if any)

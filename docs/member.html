@@ -61,9 +61,11 @@ async function init() {
       (r) => `
       <div class="card">
         <span class="tag">${r.category}</span>
-        <h3 style="margin:0.5rem 0 0.25rem 0">
-          <a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">${r.number} — ${r.title}</a>
-        </h3>
+        ${
+          r.plainSummary
+            ? `<p class="plain-summary"><a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">${r.plainSummary}</a></p><p class="legal-title">${r.number} — ${r.title}</p>`
+            : `<h3 style="margin:0.5rem 0 0.25rem 0"><a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">${r.number} — ${r.title}</a></h3>`
+        }
         <div class="meta">${r.meeting ? formatDate(r.meeting.date) : ""} · ${voteBadge(r.votes[name])}</div>
       </div>`
     )

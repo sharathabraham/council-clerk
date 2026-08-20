@@ -70,11 +70,15 @@ function resolutionCard(r, memberByLastName) {
     ? `<a href="ordinance.html?number=${encodeURIComponent(r.ordinanceNumber)}">Ordinance #${r.ordinanceNumber}${r.readingStage ? " — " + r.readingStage : ""}</a>`
     : "";
 
+  const summaryHtml = r.plainSummary
+    ? `<p class="plain-summary">${r.plainSummary}</p><p class="legal-title">${r.number} — ${r.title}</p>`
+    : `<h3 style="margin:0.5rem 0 0.25rem 0">${r.number} — ${r.title}</h3>`;
+
   return `
     <div class="card">
       <span class="tag">${r.category}</span>
       ${r.consentAgenda ? '<span class="tag" style="background:#f1f5f9;color:#475569">Consent Agenda</span>' : ""}
-      <h3 style="margin:0.5rem 0 0.25rem 0">${r.number} — ${r.title}</h3>
+      ${summaryHtml}
       <div class="meta">
         ${r.movedBy ? `Moved by ${r.movedBy}` : ""}${r.secondedBy ? `, seconded by ${r.secondedBy}` : ""}
         ${ordinanceLink ? `<br>${ordinanceLink}` : ""}

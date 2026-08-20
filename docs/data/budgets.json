@@ -165,5 +165,21 @@
     ],
     "nonTaxRevenue": { "y2025": 14813919.0, "y2026": 12629853.0 },
     "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2570:2026-municipal-budget-as-introduced"
+  },
+  "departmentBreakdown": {
+    "note": "\"Schools\" isn't a municipal budget category - the school district taxes and spends separately from the Borough government, so it can't appear here. This covers only the Borough's own day-to-day departmental operating budget (within the state's 2%/3.5% spending-cap rule) - it excludes debt service, capital improvements, and grant programs, which are shown separately above since NJ budget law tracks them outside the department-level detail.",
+    "years": [2025, 2026],
+    "coverageNote": "Only 2025 and 2026 have this level of department detail. The Borough hasn't posted a full itemized budget document for 2021-2024 - only 1-page totals-only summaries - so this breakdown can't be extended further back without those documents existing.",
+    "categories": [
+      { "name": "Public Safety", "y2025": 10163458.0, "y2026": 10374160.0 },
+      { "name": "Insurance & Employee Benefits", "y2025": 5029464.0, "y2026": 5728728.0 },
+      { "name": "Public Works", "y2025": 4018846.0, "y2026": 4555000.0 },
+      { "name": "Administration & Legal", "y2025": 1886983.0, "y2026": 2010050.0 },
+      { "name": "Other", "y2025": 1085000.0, "y2026": 1220000.0 },
+      { "name": "Health & Community Services", "y2025": 791000.0, "y2026": 911000.0 },
+      { "name": "Construction & Code Enforcement", "y2025": 536000.0, "y2026": 570100.0 }
+    ],
+    "reconciliation": "These 7 categories sum to exactly $23,510,751 (2025) and $25,369,038 (2026), matching the budget document's own stated \"Total Operations within CAPS\" figures to the penny - verified line-item by line-item (65 individual appropriation lines) before publishing.",
+    "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2570:2026-municipal-budget-as-introduced"
   }
 }

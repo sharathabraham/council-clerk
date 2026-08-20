@@ -6,3 +6,4 @@ scraper/_merge_summaries.py
 __pycache__/
 *.pyc
 .DS_Store
+scraper/_dept_breakdown*.json

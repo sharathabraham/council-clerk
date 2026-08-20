@@ -14,6 +14,16 @@
   --abstain-bg: #fef3c7;
   --absent: #4b5563;
   --absent-bg: #e5e7eb;
+
+  /* chart marks - status colors for vote outcomes, single hue for magnitude */
+  --viz-good: #0ca30c;
+  --viz-warning: #fab219;
+  --viz-critical: #d03b3b;
+  --viz-neutral: #9ca3af;
+  --viz-seq: #1d4ed8;
+  --viz-seq-light: #dbeafe;
+  --viz-grid: #e1e0d9;
+  --viz-text-muted: #898781;
 }
 
 * { box-sizing: border-box; }
@@ -239,4 +249,231 @@ table.votes th, table.votes td {
 .member-grid .role {
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+/* ---- dashboard / charts ---- */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.kpi-tile {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.kpi-tile .kpi-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.kpi-tile .kpi-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+}
+
+.chart-card h3 {
+  margin: 0 0 0.2rem 0;
+}
+
+.chart-card .chart-caption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
+.chart-legend .swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+/* horizontal stacked bar (per-member vote breakdown) */
+
+.hbar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.hbar-row .hbar-label {
+  width: 150px;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.hbar-label a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.hbar-label a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.hbar-track {
+  flex: 1;
+  display: flex;
+  height: 22px;
+  border-radius: 0 4px 4px 0;
+  overflow: hidden;
+  background: var(--viz-grid);
+}
+
+.hbar-seg {
+  height: 100%;
+  box-sizing: border-box;
+  border-right: 2px solid var(--card);
+  cursor: pointer;
+}
+
+.hbar-seg:last-child {
+  border-right: none;
+}
+
+.hbar-seg:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+}
+
+.hbar-total {
+  width: 34px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* vertical column chart (category / meeting magnitude) */
+
+.vbar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.9rem;
+  height: 200px;
+  padding-top: 1.6rem; /* room for value-on-cap labels */
+  overflow-x: auto;
+}
+
+.vbar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 46px;
+  height: 100%;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.vbar-value {
+  font-size: 0.78rem;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
+}
+
+.vbar-bar {
+  width: 28px;
+  max-width: 60%;
+  background: var(--viz-seq);
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+
+.vbar-bar:focus-visible {
+  outline: 2px solid var(--blue-dark);
+  outline-offset: 2px;
+}
+
+.vbar-tick {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 70px;
+  line-height: 1.25;
+}
+
+/* tooltip */
+
+#viz-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--ink);
+  color: white;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  z-index: 50;
+  display: none;
+  max-width: 220px;
+  line-height: 1.4;
+}
+
+#viz-tooltip .tt-value {
+  font-weight: 700;
+}
+
+#viz-tooltip .tt-label {
+  color: #d1d5db;
+}
+
+.table-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.table-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+table.viz-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+table.viz-table th, table.viz-table td {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+table.viz-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hidden {
+  display: none !important;
 }

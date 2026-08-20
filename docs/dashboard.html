@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard — Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <nav class="site-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+  </nav>
+</header>
+<main>
+  <div id="kpis" class="kpi-row"></div>
+
+  <div class="card chart-card">
+    <h3>How each member has voted</h3>
+    <p class="chart-caption">Every resolution voted on so far this term, broken down by outcome.</p>
+    <div class="chart-legend" id="member-legend"></div>
+    <div id="member-chart"></div>
+    <button class="table-toggle" data-target="member-table">View as table</button>
+    <div id="member-table" class="hidden"></div>
+  </div>
+
+  <div class="card chart-card">
+    <h3>What the council spends its time on</h3>
+    <p class="chart-caption">Resolutions so far this term, grouped by category.</p>
+    <div id="category-chart" class="vbar-chart"></div>
+    <button class="table-toggle" data-target="category-table">View as table</button>
+    <div id="category-table" class="hidden"></div>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Resolutions per meeting</h3>
+    <p class="chart-caption">Reorganization meetings in January are always the biggest — that's when appointments for the year get made.</p>
+    <div id="meeting-chart" class="vbar-chart"></div>
+    <button class="table-toggle" data-target="meeting-table">View as table</button>
+    <div id="meeting-table" class="hidden"></div>
+  </div>
+</main>
+
+<div id="viz-tooltip" role="tooltip"></div>
+
+<script src="common.js"></script>
+<script>
+const VOTE_COLORS = {
+  Aye: "var(--viz-good)",
+  Nay: "var(--viz-critical)",
+  Abstain: "var(--viz-warning)",
+  Absent: "var(--viz-neutral)",
+};
+const VOTE_ORDER = ["Aye", "Nay", "Abstain", "Absent"];
+
+function showTooltip(evt, label, value) {
+  const tt = document.getElementById("viz-tooltip");
+  tt.innerHTML = "";
+  const valueEl = document.createElement("span");
+  valueEl.className = "tt-value";
+  valueEl.textContent = value;
+  const labelEl = document.createElement("span");
+  labelEl.className = "tt-label";
+  labelEl.textContent = " " + label;
+  tt.appendChild(valueEl);
+  tt.appendChild(labelEl);
+  tt.style.display = "block";
+  positionTooltip(evt);
+}
+
+function positionTooltip(evt) {
+  const tt = document.getElementById("viz-tooltip");
+  const x = evt.clientX !== undefined ? evt.clientX : evt.target.getBoundingClientRect().left;
+  const y = evt.clientY !== undefined ? evt.clientY : evt.target.getBoundingClientRect().top;
+  tt.style.left = Math.min(x + 14, window.innerWidth - 230) + "px";
+  tt.style.top = Math.max(y - 40, 8) + "px";
+}
+
+function hideTooltip() {
+  document.getElementById("viz-tooltip").style.display = "none";
+}
+
+function wireHover(el, label, value) {
+  el.addEventListener("pointermove", (e) => showTooltip(e, label, value));
+  el.addEventListener("pointerenter", (e) => showTooltip(e, label, value));
+  el.addEventListener("pointerleave", hideTooltip);
+  el.addEventListener("focus", (e) => showTooltip(e, label, value));
+  el.addEventListener("blur", hideTooltip);
+}
+
+function wireTableToggle(buttonEl) {
+  buttonEl.addEventListener("click", () => {
+    const target = document.getElementById(buttonEl.dataset.target);
+    const willShow = target.classList.contains("hidden");
+    target.classList.toggle("hidden");
+    buttonEl.textContent = willShow ? "Hide table" : "View as table";
+  });
+}
+
+async function init() {
+  const { meetings, resolutions, members } = await loadData();
+  document.querySelectorAll(".table-toggle").forEach(wireTableToggle);
+
+  // ---- KPIs ----
+  const ordinancesEnacted = resolutions.filter((r) => r.readingStage === "Second Reading / Final Passage").length;
+  const catCounts = {};
+  resolutions.forEach((r) => (catCounts[r.category] = (catCounts[r.category] || 0) + 1));
+  const topCategory = Object.entries(catCounts).sort((a, b) => b[1] - a[1])[0];
+
+  const kpis = [
+    { value: meetings.length, label: "Meetings this term" },
+    { value: resolutions.length, label: "Resolutions passed" },
+    { value: ordinancesEnacted, label: "Ordinances enacted" },
+    { value: topCategory ? `${topCategory[1]}` : "-", label: topCategory ? `${topCategory[0]} items` : "" },
+  ];
+  const kpiRow = document.getElementById("kpis");
+  kpis.forEach((k) => {
+    const tile = document.createElement("div");
+    tile.className = "kpi-tile";
+    const value = document.createElement("div");
+    value.className = "kpi-value";
+    value.textContent = k.value;
+    const label = document.createElement("div");
+    label.className = "kpi-label";
+    label.textContent = k.label;
+    tile.appendChild(value);
+    tile.appendChild(label);
+    kpiRow.appendChild(tile);
+  });
+
+  // ---- member vote breakdown ----
+  const votingMembers = members.filter((m) => m.votes !== false);
+  const memberStats = votingMembers.map((m) => {
+    const name = lastName(m.name);
+    const counts = { Aye: 0, Nay: 0, Abstain: 0, Absent: 0 };
+    resolutions.forEach((r) => {
+      const v = r.votes && r.votes[name];
+      if (v && counts[v] !== undefined) counts[v]++;
+    });
+    return { member: m, counts, total: Object.values(counts).reduce((a, b) => a + b, 0) };
+  });
+
+  const legend = document.getElementById("member-legend");
+  VOTE_ORDER.forEach((label) => {
+    const item = document.createElement("span");
+    const swatch = document.createElement("span");
+    swatch.className = "swatch";
+    swatch.style.background = VOTE_COLORS[label];
+    item.appendChild(swatch);
+    item.appendChild(document.createTextNode(label));
+    legend.appendChild(item);
+  });
+
+  const memberChart = document.getElementById("member-chart");
+  memberStats.forEach(({ member, counts, total }) => {
+    const row = document.createElement("div");
+    row.className = "hbar-row";
+
+    const label = document.createElement("div");
+    label.className = "hbar-label";
+    const link = document.createElement("a");
+    link.href = `member.html?slug=${member.slug}`;
+    link.textContent = member.name;
+    label.appendChild(link);
+    row.appendChild(label);
+
+    const track = document.createElement("div");
+    track.className = "hbar-track";
+    VOTE_ORDER.forEach((label) => {
+      const count = counts[label];
+      if (count === 0) return;
+      const seg = document.createElement("div");
+      seg.className = "hbar-seg";
+      seg.style.width = `${(count / total) * 100}%`;
+      seg.style.background = VOTE_COLORS[label];
+      seg.tabIndex = 0;
+      seg.setAttribute("role", "img");
+      seg.setAttribute("aria-label", `${member.name}: ${count} ${label}`);
+      wireHover(seg, `${label} — ${member.name}`, count);
+      track.appendChild(seg);
+    });
+    row.appendChild(track);
+
+    const totalEl = document.createElement("div");
+    totalEl.className = "hbar-total";
+    totalEl.textContent = total;
+    row.appendChild(totalEl);
+
+    memberChart.appendChild(row);
+  });
+
+  const memberTable = document.getElementById("member-table");
+  memberTable.appendChild(
+    buildTable(
+      ["Member", ...VOTE_ORDER, "Total"],
+      memberStats.map((s) => [s.member.name, ...VOTE_ORDER.map((v) => s.counts[v]), s.total])
+    )
+  );
+
+  // ---- category chart ----
+  const categoryEntries = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
+  renderColumnChart("category-chart", categoryEntries);
+  document.getElementById("category-table").appendChild(buildTable(["Category", "Resolutions"], categoryEntries));
+
+  // ---- meetings timeline chart ----
+  const sortedMeetings = [...meetings].sort((a, b) => a.date.localeCompare(b.date));
+  const meetingEntries = sortedMeetings.map((m) => {
+    const count = resolutions.filter((r) => r.meetingId === m.id).length;
+    const shortLabel = formatDate(m.date).replace(",", "").replace(/(\w+) (\d+) (\d+)/, "$1 $2");
+    return [shortLabel, count];
+  });
+  renderColumnChart("meeting-chart", meetingEntries);
+  document.getElementById("meeting-table").appendChild(
+    buildTable(
+      ["Meeting", "Resolutions"],
+      sortedMeetings.map((m) => [`${formatDate(m.date)} — ${m.type}`, resolutions.filter((r) => r.meetingId === m.id).length])
+    )
+  );
+}
+
+function renderColumnChart(containerId, entries) {
+  const container = document.getElementById(containerId);
+  const max = Math.max(...entries.map(([, v]) => v), 1);
+  entries.forEach(([label, value]) => {
+    const col = document.createElement("div");
+    col.className = "vbar-col";
+
+    const valueEl = document.createElement("div");
+    valueEl.className = "vbar-value";
+    valueEl.textContent = value;
+    col.appendChild(valueEl);
+
+    const bar = document.createElement("div");
+    bar.className = "vbar-bar";
+    bar.style.height = `${Math.max((value / max) * 100, value > 0 ? 3 : 0)}%`;
+    bar.tabIndex = 0;
+    bar.setAttribute("role", "img");
+    bar.setAttribute("aria-label", `${label}: ${value}`);
+    wireHover(bar, label, value);
+    col.appendChild(bar);
+
+    const tick = document.createElement("div");
+    tick.className = "vbar-tick";
+    tick.textContent = label;
+    col.appendChild(tick);
+
+    container.appendChild(col);
+  });
+}
+
+function buildTable(headers, rows) {
+  const table = document.createElement("table");
+  table.className = "viz-table";
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  headers.forEach((h) => {
+    const th = document.createElement("th");
+    th.textContent = h;
+    headRow.appendChild(th);
+  });
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  rows.forEach((cells) => {
+    const tr = document.createElement("tr");
+    cells.forEach((c) => {
+      const td = document.createElement("td");
+      td.textContent = c;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+init();
+</script>
+</body>
+</html>

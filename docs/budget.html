@@ -45,6 +45,33 @@
   </div>
 
   <p class="meta">Source: the Borough's own <a href="https://www.elmwoodparknj.us/elmwood-park-municipal-budgets" target="_blank" rel="noopener">"User Friendly Budget"</a> filings, a standardized form required by the NJ Division of Local Government Services. Figures shown are the finalized "Calendar Year" actuals from each filing, not budget estimates, except where noted.</p>
+
+  <h2 style="margin:2rem 0 0.25rem 0">Municipal government's own budget, 2023–2026</h2>
+  <p class="chart-caption" id="municipal-trend-note" style="margin-bottom:1.25rem"></p>
+
+  <div class="card chart-card">
+    <h3>Municipal purposes tax levy, by year</h3>
+    <p class="chart-caption">Just the "municipal purposes" line of your tax bill — the part that funds the Borough government itself, separate from school and county taxes.</p>
+    <div id="muni-levy-chart" class="vbar-chart"></div>
+    <button class="table-toggle" data-target="muni-levy-table">View as table</button>
+    <div id="muni-levy-table" class="hidden"></div>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Total municipal appropriations, by year</h3>
+    <p class="chart-caption">Everything the Borough government spends in a year, from every funding source (not just taxes).</p>
+    <div id="muni-approp-chart" class="vbar-chart"></div>
+    <button class="table-toggle" data-target="muni-approp-table">View as table</button>
+    <div id="muni-approp-table" class="hidden"></div>
+  </div>
+
+  <div class="card chart-card">
+    <h3>What changed in the 2026 budget</h3>
+    <p class="chart-caption" id="drove-summary"></p>
+    <div id="drove-chart"></div>
+    <button class="table-toggle" data-target="drove-table">View as table</button>
+    <div id="drove-table" class="hidden"></div>
+  </div>
 </main>
 
 <div id="viz-tooltip" role="tooltip"></div>
@@ -225,6 +252,83 @@ async function init() {
   renderColumnChart("rate-chart", history.map((h) => [String(h.year), h.totalRate]), (v) => v.toFixed(3));
   document.getElementById("rate-table").appendChild(
     buildTable(["Year", "Total tax rate", "Source"], history.map((h) => [h.year, h.totalRate.toFixed(3), h.sourceLabel]))
+  );
+
+  // ---- municipal-only trend ----
+  document.getElementById("municipal-trend-note").textContent = budgets.municipalTrendNote;
+  const muniTrend = [...budgets.municipalTrend].sort((a, b) => a.year - b.year);
+
+  renderColumnChart(
+    "muni-levy-chart",
+    muniTrend.map((m) => [`${m.year}${m.status === "adopted" ? "*" : ""}`, m.municipalPurposeTaxLevy]),
+    (v) => "$" + (v / 1e6).toFixed(1) + "M"
+  );
+  document.getElementById("muni-levy-table").appendChild(
+    buildTable(
+      ["Year", "Municipal purposes tax levy", "Status", "Source"],
+      muniTrend.map((m) => [m.year, money(m.municipalPurposeTaxLevy), m.status, m.sourceLabel])
+    )
+  );
+
+  renderColumnChart(
+    "muni-approp-chart",
+    muniTrend.map((m) => [`${m.year}${m.status === "adopted" ? "*" : ""}`, m.totalAppropriations]),
+    (v) => "$" + (v / 1e6).toFixed(1) + "M"
+  );
+  document.getElementById("muni-approp-table").appendChild(
+    buildTable(
+      ["Year", "Total appropriations", "Status", "Source"],
+      muniTrend.map((m) => [m.year, money(m.totalAppropriations), m.status, m.sourceLabel])
+    )
+  );
+
+  // ---- what drove 2026 ----
+  const drove = budgets.whatDrove2026;
+  document.getElementById("drove-summary").textContent =
+    drove.summary + " (* = 2026 figures are the adopted budget, not yet a finalized year-end actual.)";
+
+  const droveChart = document.getElementById("drove-chart");
+  const maxAbs = Math.max(...drove.appropriationChanges.map((c) => Math.abs(c.y2026 - c.y2025)));
+  drove.appropriationChanges.forEach((c) => {
+    const delta = c.y2026 - c.y2025;
+    const row = document.createElement("div");
+    row.className = "diverging-row";
+
+    const label = document.createElement("div");
+    label.className = "diverging-label";
+    label.textContent = c.category;
+    row.appendChild(label);
+
+    const trackEl = document.createElement("div");
+    trackEl.className = "diverging-track";
+    const centerLine = document.createElement("div");
+    centerLine.className = "diverging-center-line";
+    trackEl.appendChild(centerLine);
+
+    const bar = document.createElement("div");
+    bar.className = "diverging-bar " + (delta >= 0 ? "increase" : "decrease");
+    bar.style.width = `${(Math.abs(delta) / maxAbs) * 50}%`;
+    bar.tabIndex = 0;
+    bar.setAttribute("role", "img");
+    const deltaLabel = `${delta >= 0 ? "+" : "-"}${money(Math.abs(delta))} vs. 2025`;
+    bar.setAttribute("aria-label", `${c.category}: ${deltaLabel}`);
+    wireHover(bar, c.category, deltaLabel);
+    trackEl.appendChild(bar);
+    row.appendChild(trackEl);
+
+    const valueEl = document.createElement("div");
+    valueEl.className = "diverging-value";
+    valueEl.textContent = (delta >= 0 ? "+" : "-") + "$" + (Math.abs(delta) / 1000).toFixed(0) + "K";
+    row.appendChild(valueEl);
+
+    droveChart.appendChild(row);
+  });
+
+  document.getElementById("drove-table").appendChild(
+    buildTable(
+      ["Category", "2025", "2026", "Change"],
+      drove.appropriationChanges.map((c) => [c.category, money(c.y2025), money(c.y2026), money(c.y2026 - c.y2025)])
+    )
   );
 }
 init();

@@ -492,3 +492,63 @@ table.viz-table th {
 .hidden {
   display: none !important;
 }
+
+/* diverging bar (2025 -> 2026 category changes) */
+
+.diverging-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.diverging-label {
+  width: 230px;
+  flex-shrink: 0;
+  font-size: 0.83rem;
+  text-align: right;
+  color: var(--ink);
+}
+
+.diverging-track {
+  flex: 1;
+  position: relative;
+  height: 22px;
+  background: var(--viz-grid);
+  border-radius: 4px;
+}
+
+.diverging-center-line {
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--muted);
+}
+
+.diverging-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.diverging-bar.increase {
+  left: 50%;
+  border-radius: 0 4px 4px 0;
+  background: var(--viz-critical);
+}
+
+.diverging-bar.decrease {
+  right: 50%;
+  border-radius: 4px 0 0 4px;
+  background: var(--viz-seq);
+}
+
+.diverging-value {
+  width: 100px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

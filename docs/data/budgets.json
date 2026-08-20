@@ -109,5 +109,61 @@
     "estimatedTotalLevy": 67149396.0,
     "note": "The Borough's own current-year budget estimate - not yet a finalized calendar-year actual, shown separately from the history above for that reason.",
     "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2251:2024-user-friendly-budget"
+  },
+  "municipalTrendNote": "The history and breakdown above cover the FULL combined property tax (municipal + school + county) but only run through 2023, because that's the state's standardized combined filing and the Borough hasn't filed a new one since. The trend below is narrower but more current: it's just the Borough's own municipal government budget and the 'municipal purposes' slice of your tax bill, through 2026.",
+  "municipalTrend": [
+    {
+      "year": 2023,
+      "totalAppropriations": 32822890.0,
+      "municipalPurposeTaxLevy": 19155373.0,
+      "libraryTax": 894524.0,
+      "status": "final",
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2252:2024-budget-summary",
+      "sourceLabel": "reported as \"Final 2023 Budget\" in the 2024 budget summary"
+    },
+    {
+      "year": 2024,
+      "totalAppropriations": 37695454.0,
+      "municipalPurposeTaxLevy": 21657228.0,
+      "libraryTax": 948423.0,
+      "outstandingDebtGeneral": 17728000.0,
+      "outstandingDebtWater": 2498925.0,
+      "status": "final",
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2569:2025-budget-summary",
+      "sourceLabel": "reported as \"Final 2024 Budget\" in the 2025 budget summary"
+    },
+    {
+      "year": 2025,
+      "totalAppropriations": 39693499.0,
+      "municipalPurposeTaxLevy": 23802407.0,
+      "libraryTax": 1077173.0,
+      "outstandingDebtGeneral": 16517169.0,
+      "outstandingDebtWater": 2112848.0,
+      "status": "final",
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2570:2026-municipal-budget-as-introduced",
+      "sourceLabel": "fully expended per the 2026 budget's own reconciliation of 2025 spending"
+    },
+    {
+      "year": 2026,
+      "totalAppropriations": 41403464.0,
+      "municipalPurposeTaxLevy": 27573712.0,
+      "libraryTax": 1199899.0,
+      "status": "adopted",
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2570:2026-municipal-budget-as-introduced",
+      "sourceLabel": "adopted budget, filed April 23, 2026 - not yet a finalized year-end actual"
+    }
+  ],
+  "whatDrove2026": {
+    "summary": "The municipal tax levy rose about $3.9M for 2026. Roughly half of that ($1.86M) came from higher day-to-day operating costs; the rest came from the Borough using about $2.18M less surplus and other non-tax revenue to offset the budget than it did in 2025, so more had to come directly from property taxes.",
+    "appropriationChanges": [
+      { "category": "Day-to-day operations (within the state spending cap)", "y2025": 23510751.0, "y2026": 25369038.0 },
+      { "category": "Other operations (outside the cap)", "y2025": 6171382.0, "y2026": 5961171.0 },
+      { "category": "Shared-service agreements with other towns", "y2025": 420743.0, "y2026": 530743.0 },
+      { "category": "Grant-funded public/private programs", "y2025": 210072.0, "y2026": 112517.0 },
+      { "category": "Capital improvements", "y2025": 360000.0, "y2026": 400000.0 },
+      { "category": "Debt service (paying down borrowed money)", "y2025": 2484112.0, "y2026": 2346570.0 }
+    ],
+    "nonTaxRevenue": { "y2025": 14813919.0, "y2026": 12629853.0 },
+    "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2570:2026-municipal-budget-as-introduced"
   }
 }

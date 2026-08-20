@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ordinance — Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <nav class="site-nav">
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+  </nav>
+</header>
+<main>
+  <a class="back-link" href="index.html">&larr; All meetings</a>
+  <div id="content"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+async function init() {
+  const number = qs("number");
+  const { meetings, resolutions, members } = await loadData();
+  const content = document.getElementById("content");
+
+  const memberByLastName = {};
+  members.forEach((m) => (memberByLastName[lastName(m.name)] = m));
+
+  const stages = resolutions
+    .filter((r) => r.ordinanceNumber === number)
+    .map((r) => ({ ...r, meeting: meetingById(meetings, r.meetingId) }))
+    .sort((a, b) => (a.meeting && b.meeting ? a.meeting.date.localeCompare(b.meeting.date) : 0));
+
+  if (stages.length === 0) {
+    content.innerHTML = `<p class="empty-state">No record found for ordinance #${number}.</p>`;
+    return;
+  }
+
+  const title = stages[0].title;
+
+  const stagesHtml = stages
+    .map((r) => {
+      const voteRows = Object.entries(r.votes)
+        .map(([name, vote]) => {
+          const member = memberByLastName[name];
+          const label = member ? member.name : name;
+          return `<tr><td>${label}</td><td>${voteBadge(vote)}</td></tr>`;
+        })
+        .join("");
+      return `
+        <div class="card">
+          <span class="tag">${r.readingStage || "Reading"}</span>
+          <h3 style="margin:0.5rem 0 0.25rem 0">
+            <a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">
+              ${r.meeting ? formatDate(r.meeting.date) : r.meetingId}
+            </a>
+          </h3>
+          <div class="meta">${r.number}</div>
+          ${voteRows ? `<table class="votes"><thead><tr><th>Member</th><th>Vote</th></tr></thead><tbody>${voteRows}</tbody></table>` : ""}
+        </div>`;
+    })
+    .join("");
+
+  content.innerHTML = `
+    <div class="card">
+      <h2 style="margin-top:0">Ordinance #${number}</h2>
+      <div class="meta">${title}</div>
+    </div>
+    ${stagesHtml}
+  `;
+}
+init();
+</script>
+</body>
+</html>

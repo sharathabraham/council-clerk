@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meeting — Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <nav class="site-nav">
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+  </nav>
+</header>
+<main>
+  <a class="back-link" href="index.html">&larr; All meetings</a>
+  <div id="content"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+async function init() {
+  const id = qs("id");
+  const { meetings, resolutions, members } = await loadData();
+  const content = document.getElementById("content");
+  const meeting = meetingById(meetings, id);
+
+  if (!meeting) {
+    content.innerHTML = `<p class="empty-state">Meeting not found.</p>`;
+    return;
+  }
+
+  const memberByLastName = {};
+  members.forEach((m) => (memberByLastName[lastName(m.name)] = m));
+
+  const items = resolutions.filter((r) => r.meetingId === id);
+
+  const header = `
+    <div class="card">
+      <h2 style="margin-top:0">${meeting.type} — ${formatDate(meeting.date)}</h2>
+      <div class="meta">
+        <a href="${meeting.minutesUrl}" target="_blank" rel="noopener">original minutes (PDF)</a>
+        ${meeting.agendaUrl ? ` · <a href="${meeting.agendaUrl}" target="_blank" rel="noopener">agenda</a>` : ""}
+      </div>
+      ${videoEmbedHtml(meeting.videoUrl)}
+    </div>
+  `;
+
+  const itemsHtml = items.length
+    ? items.map((r) => resolutionCard(r, memberByLastName)).join("")
+    : `<p class="empty-state">No resolutions parsed for this meeting.</p>`;
+
+  content.innerHTML = header + itemsHtml;
+}
+
+function resolutionCard(r, memberByLastName) {
+  const voteRows = Object.entries(r.votes)
+    .map(([name, vote]) => {
+      const member = memberByLastName[name];
+      const label = member ? member.name : name;
+      const link = member ? `<a href="member.html?slug=${member.slug}">${label}</a>` : label;
+      return `<tr><td>${link}</td><td>${voteBadge(vote)}</td></tr>`;
+    })
+    .join("");
+
+  const ordinanceLink = r.ordinanceNumber
+    ? `<a href="ordinance.html?number=${encodeURIComponent(r.ordinanceNumber)}">Ordinance #${r.ordinanceNumber}${r.readingStage ? " — " + r.readingStage : ""}</a>`
+    : "";
+
+  return `
+    <div class="card">
+      <span class="tag">${r.category}</span>
+      ${r.consentAgenda ? '<span class="tag" style="background:#f1f5f9;color:#475569">Consent Agenda</span>' : ""}
+      <h3 style="margin:0.5rem 0 0.25rem 0">${r.number} — ${r.title}</h3>
+      <div class="meta">
+        ${r.movedBy ? `Moved by ${r.movedBy}` : ""}${r.secondedBy ? `, seconded by ${r.secondedBy}` : ""}
+        ${ordinanceLink ? `<br>${ordinanceLink}` : ""}
+      </div>
+      ${
+        voteRows
+          ? `<table class="votes"><thead><tr><th>Member</th><th>Vote</th></tr></thead><tbody>${voteRows}</tbody></table>`
+          : `<p class="empty-state">No vote record found for this item.</p>`
+      }
+    </div>
+  `;
+}
+
+init();
+</script>
+</body>
+</html>

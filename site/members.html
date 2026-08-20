@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Council Members — Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <nav class="site-nav">
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+  </nav>
+</header>
+<main>
+  <div class="member-grid" id="members"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+async function init() {
+  const { members } = await loadData();
+  const container = document.getElementById("members");
+  container.innerHTML = members
+    .map(
+      (m) => `
+      <a href="member.html?slug=${m.slug}">
+        <div>${m.name}</div>
+        <div class="role">${m.role}</div>
+      </a>`
+    )
+    .join("");
+}
+init();
+</script>
+</body>
+</html>

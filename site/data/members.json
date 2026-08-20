@@ -1,0 +1,9 @@
+[
+  {"name": "Robert Colletti", "role": "Mayor", "slug": "robert-colletti", "votes": false},
+  {"name": "Lorraine Pellegrine", "role": "Council President", "slug": "lorraine-pellegrine", "votes": true},
+  {"name": "Francesco Fasolo", "role": "Councilman", "slug": "francesco-fasolo", "votes": true},
+  {"name": "Joseph S. Oswald", "role": "Councilman", "slug": "joseph-oswald", "votes": true},
+  {"name": "Eric H. Saimson", "role": "Councilman", "slug": "eric-saimson", "votes": true},
+  {"name": "Theresa Sheridan", "role": "Councilwoman", "slug": "theresa-sheridan", "votes": true},
+  {"name": "Pamela Troisi", "role": "Councilwoman", "slug": "pamela-troisi", "votes": true}
+]

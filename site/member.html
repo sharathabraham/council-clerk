@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Member — Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <nav class="site-nav">
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+  </nav>
+</header>
+<main>
+  <a class="back-link" href="members.html">&larr; All members</a>
+  <div id="content"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+async function init() {
+  const slug = qs("slug");
+  const { meetings, resolutions, members } = await loadData();
+  const content = document.getElementById("content");
+  const member = memberBySlug(members, slug);
+
+  if (!member) {
+    content.innerHTML = `<p class="empty-state">Member not found.</p>`;
+    return;
+  }
+
+  if (member.votes === false) {
+    content.innerHTML = `
+      <div class="card">
+        <h2 style="margin-top:0">${member.name}</h2>
+        <div class="meta">${member.role}</div>
+        <p class="empty-state">The Mayor does not appear in the Council's roll-call vote record.</p>
+      </div>`;
+    return;
+  }
+
+  const name = lastName(member.name);
+  const votedItems = resolutions
+    .filter((r) => r.votes && Object.prototype.hasOwnProperty.call(r.votes, name))
+    .map((r) => ({ ...r, meeting: meetingById(meetings, r.meetingId) }))
+    .sort((a, b) => (a.meeting && b.meeting ? b.meeting.date.localeCompare(a.meeting.date) : 0));
+
+  const counts = { Aye: 0, Nay: 0, Abstain: 0, Absent: 0 };
+  votedItems.forEach((r) => counts[r.votes[name]] !== undefined && counts[r.votes[name]]++);
+
+  const statsHtml = Object.entries(counts)
+    .map(([label, num]) => `<div class="stat"><div class="num">${num}</div><div class="label">${label}</div></div>`)
+    .join("");
+
+  const rowsHtml = votedItems
+    .map(
+      (r) => `
+      <div class="card">
+        <span class="tag">${r.category}</span>
+        <h3 style="margin:0.5rem 0 0.25rem 0">
+          <a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">${r.number} — ${r.title}</a>
+        </h3>
+        <div class="meta">${r.meeting ? formatDate(r.meeting.date) : ""} · ${voteBadge(r.votes[name])}</div>
+      </div>`
+    )
+    .join("");
+
+  content.innerHTML = `
+    <div class="card">
+      <h2 style="margin-top:0">${member.name}</h2>
+      <div class="meta">${member.role}</div>
+    </div>
+    <div class="stat-row">${statsHtml}</div>
+    ${rowsHtml || '<p class="empty-state">No votes on record yet.</p>'}
+  `;
+}
+init();
+</script>
+</body>
+</html>

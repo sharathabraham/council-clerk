@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <p>Meeting minutes, videos, and how each council member voted — pulled automatically from the Borough's own website.</p>
+  <nav class="site-nav">
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+  </nav>
+</header>
+<main>
+  <div class="filters" id="filters"></div>
+  <div id="meetings"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+async function init() {
+  const { meetings, resolutions } = await loadData();
+  const container = document.getElementById("meetings");
+  const filtersEl = document.getElementById("filters");
+
+  const categories = [...new Set(resolutions.map((r) => r.category))].sort();
+  let activeCategory = null;
+
+  function render() {
+    container.innerHTML = "";
+    if (meetings.length === 0) {
+      container.innerHTML = `<p class="empty-state">No meetings loaded yet — run the scraper to pull data from the Borough's website.</p>`;
+      return;
+    }
+    for (const meeting of meetings) {
+      const meetingResolutions = resolutions.filter((r) => r.meetingId === meeting.id);
+      const visible = activeCategory
+        ? meetingResolutions.filter((r) => r.category === activeCategory)
+        : meetingResolutions;
+      if (activeCategory && visible.length === 0) continue;
+
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <a class="title-link" href="meeting.html?id=${encodeURIComponent(meeting.id)}">
+          ${meeting.type} — ${formatDate(meeting.date)}
+        </a>
+        <div class="meta">
+          ${meetingResolutions.length} resolution${meetingResolutions.length === 1 ? "" : "s"}
+          ${meeting.videoUrl ? " · video available" : ""}
+          · <a href="${meeting.minutesUrl}" target="_blank" rel="noopener">original minutes (PDF)</a>
+        </div>
+      `;
+      container.appendChild(card);
+    }
+    if (container.innerHTML === "") {
+      container.innerHTML = `<p class="empty-state">No meetings match that category yet.</p>`;
+    }
+  }
+
+  filtersEl.innerHTML = `<button data-cat="" class="active">All</button>` +
+    categories.map((c) => `<button data-cat="${c}">${c}</button>`).join("");
+  filtersEl.querySelectorAll("button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filtersEl.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeCategory = btn.dataset.cat || null;
+      render();
+    });
+  });
+
+  render();
+}
+init();
+</script>
+</body>
+</html>

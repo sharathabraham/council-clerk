@@ -22,10 +22,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r scraper/requirements.txt
 
-      - name: Run scraper
+      - name: Run minutes/votes scraper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scraper/update_data.py
+
+      - name: Run budgets scraper
+        run: python scraper/update_budgets.py
 
       - name: Commit updated data (if any)
         run: |

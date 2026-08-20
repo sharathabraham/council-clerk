@@ -15,19 +15,27 @@ website (elmwoodparknj.us), and updates itself automatically.
   files directly. Data lives inside `docs/` so the folder is self-contained —
   it works the same whether it's served from the repo root or as its own
   GitHub Pages root.
-- `.github/workflows/update.yml` runs the scraper once a day on GitHub's
+- `scraper/update_budgets.py` checks the Borough's municipal-budgets page for
+  a new "User Friendly Budget" filing (a standardized NJ state form) and, if
+  it's a real digital PDF (not a scanned image), parses the property-tax
+  breakdown into `docs/data/budgets.json`. Years 2017-2023 are scanned images
+  with no extractable text and were entered by hand once, sourced from the
+  Borough's own filings (see `sourceUrl`/`sourceLabel` on each entry); 2024
+  onward is parsed automatically as new filings appear.
+- `.github/workflows/update.yml` runs both scrapers once a day on GitHub's
   servers and commits any new data automatically — the live site (via GitHub
   Pages) picks up the change on the next commit, no manual steps needed.
 
-## Running the scraper yourself
+## Running the scrapers yourself
 
 ```
 pip install -r scraper/requirements.txt
 python3 scraper/update_data.py
+python3 scraper/update_budgets.py
 ```
 
-Safe to re-run any time — it only downloads meetings not already present in
-`docs/data/meetings.json`.
+Both are safe to re-run any time — they only process meetings/filings not
+already present in `docs/data/`.
 
 ## Viewing the site locally
 

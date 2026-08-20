@@ -1,0 +1,113 @@
+{
+  "history": [
+    {
+      "year": 2016,
+      "totalRate": 2.829,
+      "totalLevy": 58660529.64,
+      "taxableValuation": 2072358400.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=853:2017-user-friendly-budget",
+      "sourceLabel": "reported in the 2017 filing"
+    },
+    {
+      "year": 2018,
+      "totalRate": 2.923,
+      "totalLevy": 60634290.21,
+      "taxableValuation": 2075093390.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=1296:2019-user-friendly-municipal-budget",
+      "sourceLabel": "reported in the 2019 filing"
+    },
+    {
+      "year": 2019,
+      "totalRate": 2.951,
+      "totalLevy": 61251750.77,
+      "taxableValuation": 2079454300.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=1535:2020-user-friendly-budget",
+      "sourceLabel": "reported in the 2020 filing"
+    },
+    {
+      "year": 2020,
+      "totalRate": 3.002,
+      "totalLevy": 62409529.57,
+      "taxableValuation": 2079454300.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=1768:2021-user-friendly-budget",
+      "sourceLabel": "reported in the 2021 filing"
+    },
+    {
+      "year": 2021,
+      "totalRate": 3.026,
+      "totalLevy": 63002135.23,
+      "taxableValuation": 2082338189.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=1994:2022-user-friendly-budget",
+      "sourceLabel": "reported in the 2022 filing"
+    },
+    {
+      "year": 2022,
+      "totalRate": 3.012,
+      "totalLevy": 63150764.14,
+      "taxableValuation": 2120011300.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2066:2023-user-friendly-budget",
+      "sourceLabel": "reported in the 2023 filing"
+    },
+    {
+      "year": 2023,
+      "totalRate": 2.992,
+      "totalLevy": 63415414.94,
+      "taxableValuation": 2120011389.0,
+      "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2251:2024-user-friendly-budget",
+      "sourceLabel": "reported in the 2024 filing"
+    }
+  ],
+  "processedFilingIds": [853, 1296, 1535, 1768, 1994, 2066, 2251],
+  "note2017": "No filing is posted on the Borough's site that reports 2017 as a finalized calendar year, so 2017 is a gap in this history rather than a missing data point on our end.",
+  "latestBreakdown": {
+    "year": 2023,
+    "entities": [
+      {
+        "name": "Local School District",
+        "rate": 1.739,
+        "levy": 36853745.0,
+        "pctOfTotal": 58.11,
+        "avgResidentialImpact": 5814.31
+      },
+      {
+        "name": "Municipal Purpose Tax",
+        "rate": 0.903,
+        "levy": 19155373.22,
+        "pctOfTotal": 30.21,
+        "avgResidentialImpact": 3019.16
+      },
+      {
+        "name": "County Purposes",
+        "rate": 0.295,
+        "levy": 6238857.99,
+        "pctOfTotal": 9.84,
+        "avgResidentialImpact": 986.33
+      },
+      {
+        "name": "Municipal Library",
+        "rate": 0.042,
+        "levy": 894524.0,
+        "pctOfTotal": 1.41,
+        "avgResidentialImpact": 140.43
+      },
+      {
+        "name": "Municipal Open Space",
+        "rate": 0.013,
+        "levy": 272914.73,
+        "pctOfTotal": 0.43,
+        "avgResidentialImpact": 43.47
+      }
+    ],
+    "totalRate": 2.992,
+    "totalLevy": 63415414.94,
+    "totalAvgResidentialImpact": 10003.7,
+    "taxableValuation": 2120011389.0,
+    "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2251:2024-user-friendly-budget"
+  },
+  "currentYearEstimate": {
+    "year": 2024,
+    "estimatedTotalLevy": 67149396.0,
+    "note": "The Borough's own current-year budget estimate - not yet a finalized calendar-year actual, shown separately from the history above for that reason.",
+    "sourceUrl": "https://www.elmwoodparknj.us/elmwood-park-municipal-budgets?download=2251:2024-user-friendly-budget"
+  }
+}

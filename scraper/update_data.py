@@ -22,7 +22,7 @@ MINUTES_URL = f"{BASE}/governing-body/minutes/minutes-2026"
 VIDEOS_URL = f"{BASE}/governing-body/meeting-videos/meeting-videos-2026"
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "site" / "data"
+DATA_DIR = ROOT / "docs" / "data"
 PDF_CACHE_DIR = ROOT / "scraper" / "_pdf_cache"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; ElmwoodParkCouncilTracker/1.0)"}

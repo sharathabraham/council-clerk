@@ -10,9 +10,9 @@ website (elmwoodparknj.us), and updates itself automatically.
   downloads each new minutes PDF, and parses every resolution's "Record of
   Council Vote on Passage" table to get each member's Aye/Nay/Abstain/Absent
   vote. It also matches meetings to their YouTube video, when one exists.
-- Results are written to `site/data/meetings.json` and `site/data/resolutions.json`.
-- `site/` is a plain HTML/CSS/JS site (no build step) that reads those JSON
-  files directly. Data lives inside `site/` so the folder is self-contained —
+- Results are written to `docs/data/meetings.json` and `docs/data/resolutions.json`.
+- `docs/` is a plain HTML/CSS/JS site (no build step) that reads those JSON
+  files directly. Data lives inside `docs/` so the folder is self-contained —
   it works the same whether it's served from the repo root or as its own
   GitHub Pages root.
 - `.github/workflows/update.yml` runs the scraper once a day on GitHub's
@@ -27,7 +27,7 @@ python3 scraper/update_data.py
 ```
 
 Safe to re-run any time — it only downloads meetings not already present in
-`site/data/meetings.json`.
+`docs/data/meetings.json`.
 
 ## Viewing the site locally
 
@@ -35,7 +35,7 @@ Browsers block a static page from loading local JSON files directly
 (`file://` URLs), so serve the folder over a local server instead:
 
 ```
-cd site
+cd docs
 python3 -m http.server 8000
 ```
 

@@ -30,6 +30,9 @@ jobs:
       - name: Run budgets scraper
         run: python scraper/update_budgets.py
 
+      - name: Run public notices scraper
+        run: python scraper/update_notices.py
+
       - name: Commit updated data (if any)
         run: |
           git config user.name "council-tracker-bot"

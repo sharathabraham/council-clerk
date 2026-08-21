@@ -21,6 +21,12 @@
   </nav>
 </header>
 <main>
+  <div class="card" id="ordinance-index-card" style="display:none">
+    <h3 style="margin-top:0">All ordinances</h3>
+    <p class="chart-caption">Every ordinance we know about, including some from meetings the Borough hasn't published minutes for yet (marked with a notice icon 📋).</p>
+    <div id="ordinance-index"></div>
+  </div>
+
   <div class="filters" id="filters"></div>
   <div id="feed"></div>
 </main>
@@ -29,8 +35,11 @@
 <script>
 async function init() {
   const { meetings, resolutions } = await loadData();
+  const notices = await fetch("data/notices.json").then((r) => (r.ok ? r.json() : { ordinanceNotices: [] }));
   const container = document.getElementById("feed");
   const filtersEl = document.getElementById("filters");
+
+  renderOrdinanceIndex(resolutions, notices.ordinanceNotices || []);
 
   const meetingById = {};
   meetings.forEach((m) => (meetingById[m.id] = m));
@@ -96,6 +105,45 @@ async function init() {
 
   render();
 }
+
+function renderOrdinanceIndex(resolutions, ordinanceNotices) {
+  const fromMinutes = new Map();
+  resolutions.forEach((r) => {
+    if (r.ordinanceNumber) fromMinutes.set(r.ordinanceNumber, r.title);
+  });
+  const allNumbers = new Set([...fromMinutes.keys(), ...ordinanceNotices.map((n) => n.ordinanceNumber)]);
+  if (allNumbers.size === 0) return;
+
+  const minutesOnlyStages = new Set();
+  resolutions.forEach((r) => {
+    if (r.ordinanceNumber) minutesOnlyStages.add(r.ordinanceNumber + "|" + r.readingStage);
+  });
+  const noticeOnly = new Set();
+  ordinanceNotices.forEach((n) => {
+    if (!minutesOnlyStages.has(n.ordinanceNumber + "|" + n.readingStage)) noticeOnly.add(n.ordinanceNumber);
+  });
+
+  const sorted = [...allNumbers].sort((a, b) => {
+    const [aYr, aNum] = a.split("-").map(Number);
+    const [bYr, bNum] = b.split("-").map(Number);
+    return bYr - aYr || bNum - aNum;
+  });
+
+  const wrap = document.getElementById("ordinance-index");
+  wrap.style.display = "flex";
+  wrap.style.flexWrap = "wrap";
+  wrap.style.gap = "0.5rem";
+  sorted.forEach((num) => {
+    const a = document.createElement("a");
+    a.href = `ordinance.html?number=${encodeURIComponent(num)}`;
+    a.className = "tag";
+    a.style.textDecoration = "none";
+    a.textContent = `#${num}${noticeOnly.has(num) ? " 📋" : ""}`;
+    wrap.appendChild(a);
+  });
+  document.getElementById("ordinance-index-card").style.display = "block";
+}
+
 init();
 </script>
 </body>

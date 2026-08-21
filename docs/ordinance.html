@@ -30,25 +30,53 @@ async function init() {
   const number = qs("number");
   const { meetings, resolutions, members } = await loadData();
   const content = document.getElementById("content");
+  const notices = await fetch("data/notices.json").then((r) => (r.ok ? r.json() : { ordinanceNotices: [] }));
 
   const memberByLastName = {};
   members.forEach((m) => (memberByLastName[lastName(m.name)] = m));
 
-  const stages = resolutions
+  // minutes-based stages have real vote records; notice-based stages are a
+  // fallback for meetings the Borough hasn't published minutes for yet
+  const minutesStages = resolutions
     .filter((r) => r.ordinanceNumber === number)
-    .map((r) => ({ ...r, meeting: meetingById(meetings, r.meetingId) }))
-    .sort((a, b) => (a.meeting && b.meeting ? a.meeting.date.localeCompare(b.meeting.date) : 0));
+    .map((r) => ({ ...r, meeting: meetingById(meetings, r.meetingId), source: "minutes" }));
+  const noticeStages = (notices.ordinanceNotices || [])
+    .filter((n) => n.ordinanceNumber === number)
+    .map((n) => ({ ...n, source: "notice" }));
+
+  // prefer the minutes-based record for a reading stage when both exist -
+  // it has real votes, the notice doesn't
+  const stageMap = {};
+  for (const n of noticeStages) stageMap[n.readingStage] = n;
+  for (const r of minutesStages) stageMap[r.readingStage] = r;
+  const stages = Object.values(stageMap).sort((a, b) => {
+    const da = a.source === "minutes" ? a.meeting?.date : a.date;
+    const db = b.source === "minutes" ? b.meeting?.date : b.date;
+    return (da || "").localeCompare(db || "");
+  });
 
   if (stages.length === 0) {
     content.innerHTML = `<p class="empty-state">No record found for ordinance #${number}.</p>`;
     return;
   }
 
-  const title = stages[0].title;
-  const summary = stages.find((s) => s.plainSummary)?.plainSummary;
+  const withSummary = minutesStages.find((s) => s.plainSummary);
+  const title = withSummary ? withSummary.title : (minutesStages[0]?.title || stages.find((s) => s.title)?.title);
+  const summary = withSummary?.plainSummary;
 
   const stagesHtml = stages
     .map((r) => {
+      if (r.source === "notice") {
+        const amountText = r.amount ? ` — bonds/appropriation of ${"$" + r.amount.toLocaleString("en-US")}` : "";
+        return `
+          <div class="card">
+            <span class="tag">${r.readingStage || "Reading"}</span>
+            <span class="tag" style="background:#fffbeb;color:#92400e">From a public notice</span>
+            <h3 style="margin:0.5rem 0 0.25rem 0">${r.date ? formatDate(r.date) : "Date unknown"}</h3>
+            <div class="meta">${r.ordinanceNumber}${amountText}</div>
+            <p class="empty-state">Vote details aren't available yet — the Borough hasn't published minutes for this meeting. This stage is confirmed only by the <a href="${r.url}" target="_blank" rel="noopener">Borough's public notice</a>.</p>
+          </div>`;
+      }
       const voteRows = Object.entries(r.votes)
         .map(([name, vote]) => {
           const member = memberByLastName[name];
@@ -73,7 +101,7 @@ async function init() {
   content.innerHTML = `
     <div class="card">
       <h2 style="margin-top:0">Ordinance #${number}</h2>
-      ${summary ? `<p class="plain-summary">${summary}</p><p class="legal-title">${title}</p>` : `<div class="meta">${title}</div>`}
+      ${summary ? `<p class="plain-summary">${summary}</p><p class="legal-title">${title}</p>` : `<div class="meta">${title || ""}</div>`}
     </div>
     ${stagesHtml}
   `;

@@ -48,6 +48,12 @@
   </div>
   <p class="chart-caption" style="margin:0.25rem 0 1.5rem 0">"Municipal" = the Borough government's own budget only. "Combined" = municipal + school + county together, the full property tax picture (but only current through 2023 — see coverage note).</p>
 
+  <div class="card chart-card" id="notices-card" style="display:none">
+    <h3 style="margin-top:0">Latest budget &amp; audit notices</h3>
+    <p class="chart-caption">Pulled from the Borough's Public Notices feed - usually posted well before the annual budget/audit documents themselves catch up.</p>
+    <div id="notices-list"></div>
+  </div>
+
   <!-- ===== Where the tax dollar goes (full combined, latest year) ===== -->
   <div class="card chart-card">
     <h3 id="breakdown-title">Where your property tax dollar goes</h3>
@@ -455,6 +461,25 @@ async function init() {
       })
     )
   );
+
+  // ---- budget & audit notices ----
+  const notices = await fetch("data/notices.json").then((r) => (r.ok ? r.json() : null));
+  const budgetAuditNotices = notices?.budgetAuditNotices || [];
+  if (budgetAuditNotices.length > 0) {
+    const list = document.getElementById("notices-list");
+    budgetAuditNotices.forEach((n) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.marginBottom = "0.6rem";
+      const dateText = n.publishedDate ? formatDate(n.publishedDate) : "";
+      card.innerHTML = `
+        <h4 style="margin:0 0 0.25rem 0"><a class="title-link" href="${n.url}" target="_blank" rel="noopener">${n.title}</a></h4>
+        <div class="meta">${dateText}</div>
+      `;
+      list.appendChild(card);
+    });
+    document.getElementById("notices-card").style.display = "block";
+  }
 }
 init();
 </script>

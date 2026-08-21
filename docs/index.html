@@ -9,29 +9,194 @@
 <body>
 <header class="site-header">
   <a href="index.html"><h1>Elmwood Park Civic Tracker</h1></a>
-  <p>Meetings, votes, budgets, and development decisions — pulled automatically from the Borough's own website.</p>
+  <p>What the town has decided, what's still up for a vote, and what's worth knowing — all pulled automatically from the Borough's own website.</p>
   <nav class="site-nav">
     <a href="dashboard.html">Dashboard</a>
-    <a href="budget.html">Budget & Taxes</a>
+    <a href="budget.html">Budget &amp; Taxes</a>
     <a href="resolutions.html">Resolutions</a>
-    <a href="index.html">Meetings</a>
+    <a href="index.html">Home</a>
     <a href="members.html">Council Members</a>
     <a href="guide.html">How It Works</a>
-    <a href="boards.html">Zoning & Planning</a>
+    <a href="boards.html">Zoning &amp; Planning</a>
   </nav>
 </header>
 <main>
-  <div class="filters" id="filters"></div>
-  <div id="meetings"></div>
+  <section>
+    <h2 style="margin-bottom:0.25rem">✅ What's changed recently</h2>
+    <p class="chart-caption">Decided and final — these have already been voted on.</p>
+    <div id="changed-feed"></div>
+  </section>
+
+  <section style="margin-top:2rem">
+    <h2 style="margin-bottom:0.25rem">🗳️ What's being proposed</h2>
+    <p class="chart-caption">Introduced but not yet finally decided — there's usually still a public hearing to come.</p>
+    <div id="proposed-feed"></div>
+  </section>
+
+  <section style="margin-top:2rem">
+    <h2 style="margin-bottom:0.25rem">📌 Good to know</h2>
+    <div id="good-to-know" class="kpi-row"></div>
+    <div class="card" style="margin-top:1rem">
+      <h3 style="margin-top:0">Attending or watching a meeting</h3>
+      <ul style="margin:0.5rem 0 0 0; padding-left:1.1rem">
+        <li>Meetings are held at the <strong>Municipal Building, 182 Market Street</strong>, typically at <strong>7:00 PM</strong>.</li>
+        <li>Agendas are usually posted before the meeting — so you can see what's coming up, not just what already happened.</li>
+        <li>Every meeting we have a recording for has the video embedded right on its meeting page.</li>
+        <li>Not sure what "consent agenda" or "first/second reading" mean? See <a href="guide.html">How It Works</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="margin-top:2.5rem">
+    <h2 style="margin-bottom:0.25rem">All meetings</h2>
+    <div class="filters" id="filters"></div>
+    <div id="meetings"></div>
+  </section>
 </main>
 
 <script src="common.js"></script>
 <script>
+function itemCard({ tag, tagStyle, headline, headlineHref, sub, meta, note }) {
+  return `
+    <div class="card">
+      ${tag ? `<span class="tag"${tagStyle ? ` style="${tagStyle}"` : ""}>${tag}</span>` : ""}
+      <p class="plain-summary" style="margin-top:0.5rem">${headlineHref ? `<a class="title-link" href="${headlineHref}">${headline}</a>` : headline}</p>
+      ${sub ? `<p class="legal-title">${sub}</p>` : ""}
+      <div class="meta">${meta}</div>
+      ${note ? `<p class="empty-state" style="margin-top:0.5rem">${note}</p>` : ""}
+    </div>
+  `;
+}
+
 async function init() {
-  const { meetings, resolutions } = await loadData();
+  const { meetings, resolutions, members } = await loadData();
+  const notices = await fetch("data/notices.json").then((r) => (r.ok ? r.json() : { ordinanceNotices: [], budgetAuditNotices: [] }));
+  const budgets = await fetch("data/budgets.json").then((r) => (r.ok ? r.json() : null));
+
+  const meetingByIdMap = {};
+  meetings.forEach((m) => (meetingByIdMap[m.id] = m));
+
+  // ---- combine minutes-based + notice-based ordinance stages ----
+  const ordinanceStages = {}; // "26-16|Second Reading / Final Passage" -> record
+  resolutions.forEach((r) => {
+    if (r.ordinanceNumber) {
+      ordinanceStages[r.ordinanceNumber + "|" + r.readingStage] = {
+        ordinanceNumber: r.ordinanceNumber,
+        readingStage: r.readingStage,
+        title: r.title,
+        plainSummary: r.plainSummary,
+        date: meetingByIdMap[r.meetingId]?.date,
+        href: `meeting.html?id=${encodeURIComponent(r.meetingId)}`,
+        source: "minutes",
+      };
+    }
+  });
+  (notices.ordinanceNotices || []).forEach((n) => {
+    const key = n.ordinanceNumber + "|" + n.readingStage;
+    if (ordinanceStages[key]) return; // prefer the minutes-based version
+    ordinanceStages[key] = {
+      ordinanceNumber: n.ordinanceNumber,
+      readingStage: n.readingStage,
+      title: n.title,
+      plainSummary: null,
+      date: n.date,
+      amount: n.amount,
+      href: `ordinance.html?number=${encodeURIComponent(n.ordinanceNumber)}`,
+      source: "notice",
+    };
+  });
+  const allStages = Object.values(ordinanceStages);
+
+  // ---- "what's changed" feed: finalized ordinances + all regular resolutions ----
+  const finalizedOrdinances = allStages.filter((s) => s.readingStage === "Second Reading / Final Passage");
+  const regularResolutions = resolutions.filter((r) => !r.ordinanceNumber);
+  const changedItems = [
+    ...finalizedOrdinances.map((s) => ({
+      date: s.date,
+      html: itemCard({
+        tag: "Ordinance" + (s.source === "notice" ? " · from a public notice" : ""),
+        headline: s.plainSummary || s.title,
+        headlineHref: `ordinance.html?number=${encodeURIComponent(s.ordinanceNumber)}`,
+        sub: s.plainSummary ? `#${s.ordinanceNumber} — ${s.title}` : `#${s.ordinanceNumber}`,
+        meta: `${formatDate(s.date)}${s.amount ? " · $" + s.amount.toLocaleString("en-US") : ""}`,
+      }),
+    })),
+    ...regularResolutions.map((r) => {
+      const m = meetingByIdMap[r.meetingId];
+      return {
+        date: m?.date,
+        html: itemCard({
+          tag: r.category,
+          headline: r.plainSummary || r.title,
+          headlineHref: `meeting.html?id=${encodeURIComponent(r.meetingId)}`,
+          sub: r.plainSummary ? `${r.number} — ${r.title}` : null,
+          meta: m ? `${formatDate(m.date)} · ${m.type}` : "",
+        }),
+      };
+    }),
+  ]
+    .filter((i) => i.date)
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 8);
+
+  document.getElementById("changed-feed").innerHTML =
+    changedItems.length > 0
+      ? changedItems.map((i) => i.html).join("") + `<p class="meta"><a href="resolutions.html">See everything the council has passed &rarr;</a></p>`
+      : `<p class="empty-state">Nothing recorded yet.</p>`;
+
+  // ---- "what's being proposed" feed: First Reading with no Second Reading yet ----
+  const stagesByOrdinance = {};
+  allStages.forEach((s) => {
+    stagesByOrdinance[s.ordinanceNumber] = stagesByOrdinance[s.ordinanceNumber] || new Set();
+    stagesByOrdinance[s.ordinanceNumber].add(s.readingStage);
+  });
+  const pendingOrdinanceNumbers = Object.keys(stagesByOrdinance).filter(
+    (num) => stagesByOrdinance[num].has("First Reading") && !stagesByOrdinance[num].has("Second Reading / Final Passage")
+  );
+  const pendingItems = pendingOrdinanceNumbers
+    .map((num) => allStages.find((s) => s.ordinanceNumber === num && s.readingStage === "First Reading"))
+    .filter(Boolean)
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+  document.getElementById("proposed-feed").innerHTML =
+    pendingItems.length > 0
+      ? pendingItems
+          .map((s) =>
+            itemCard({
+              tag: "Introduced, not yet final",
+              tagStyle: "background:#fffbeb;color:#92400e",
+              headline: s.title,
+              headlineHref: `ordinance.html?number=${encodeURIComponent(s.ordinanceNumber)}`,
+              meta: `#${s.ordinanceNumber} · introduced ${formatDate(s.date)}${s.amount ? " · $" + s.amount.toLocaleString("en-US") : ""}`,
+              note: "A public hearing and final vote are still to come — see the ordinance page for the source notice, which states the hearing date.",
+            })
+          )
+          .join("")
+      : `<p class="empty-state">Nothing currently pending a final vote.</p>`;
+
+  // ---- good to know: quick facts ----
+  const facts = [];
+  if (budgets?.latestBreakdown) {
+    facts.push({ value: "$" + budgets.latestBreakdown.totalAvgResidentialImpact.toLocaleString("en-US"), label: `Avg. resident's full tax bill, ${budgets.latestBreakdown.year}` });
+  }
+  const catCounts = {};
+  resolutions.forEach((r) => (catCounts[r.category] = (catCounts[r.category] || 0) + 1));
+  const topCat = Object.entries(catCounts).sort((a, b) => b[1] - a[1])[0];
+  if (topCat) facts.push({ value: topCat[1], label: `${topCat[0]} items this term` });
+  facts.push({ value: meetings.length, label: "Meetings tracked this term" });
+  facts.push({ value: members.filter((m) => m.votes !== false).length, label: "Voting council members" });
+
+  const goodToKnow = document.getElementById("good-to-know");
+  facts.forEach((f) => {
+    const tile = document.createElement("div");
+    tile.className = "kpi-tile";
+    tile.innerHTML = `<div class="kpi-value">${f.value}</div><div class="kpi-label">${f.label}</div>`;
+    goodToKnow.appendChild(tile);
+  });
+
+  // ---- all meetings list (existing behavior) ----
   const container = document.getElementById("meetings");
   const filtersEl = document.getElementById("filters");
-
   const categories = [...new Set(resolutions.map((r) => r.category))].sort();
   let activeCategory = null;
 
@@ -43,9 +208,7 @@ async function init() {
     }
     for (const meeting of meetings) {
       const meetingResolutions = resolutions.filter((r) => r.meetingId === meeting.id);
-      const visible = activeCategory
-        ? meetingResolutions.filter((r) => r.category === activeCategory)
-        : meetingResolutions;
+      const visible = activeCategory ? meetingResolutions.filter((r) => r.category === activeCategory) : meetingResolutions;
       if (activeCategory && visible.length === 0) continue;
 
       const card = document.createElement("div");
@@ -67,8 +230,8 @@ async function init() {
     }
   }
 
-  filtersEl.innerHTML = `<button data-cat="" class="active">All</button>` +
-    categories.map((c) => `<button data-cat="${c}">${c}</button>`).join("");
+  filtersEl.innerHTML =
+    `<button data-cat="" class="active">All</button>` + categories.map((c) => `<button data-cat="${c}">${c}</button>`).join("");
   filtersEl.querySelectorAll("button").forEach((btn) => {
     btn.addEventListener("click", () => {
       filtersEl.querySelectorAll("button").forEach((b) => b.classList.remove("active"));

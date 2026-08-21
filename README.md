@@ -1,4 +1,4 @@
-# Elmwood Park Civic Tracker
+# Civic Tracker
 
 Makes Elmwood Park, NJ local government easier to follow: pulls council
 meeting minutes, videos, per-member roll-call votes, municipal budgets, and

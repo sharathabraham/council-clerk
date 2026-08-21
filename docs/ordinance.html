@@ -60,7 +60,7 @@ async function init() {
     return;
   }
 
-  const withSummary = minutesStages.find((s) => s.plainSummary);
+  const withSummary = minutesStages.find((s) => s.plainSummary) || noticeStages.find((s) => s.plainSummary);
   const title = withSummary ? withSummary.title : (minutesStages[0]?.title || stages.find((s) => s.title)?.title);
   const summary = withSummary?.plainSummary;
 

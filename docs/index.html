@@ -56,11 +56,17 @@
 
 <script src="common.js"></script>
 <script>
-function itemCard({ tag, tagStyle, headline, headlineHref, sub, meta, note }) {
+function itemCard({ tag, tagStyle, headline, headlineHref, headlineIsLegalText, sub, meta, note }) {
+  // never show raw ALL-CAPS legal text in the big bold headline style - only
+  // a real plain-English summary earns that treatment. Untranslated legal
+  // text falls back to the small italic style used everywhere else on the
+  // site for the same reason.
+  const headlineClass = headlineIsLegalText ? "legal-title" : "plain-summary";
+  const headlineHtml = headlineHref ? `<a class="title-link" href="${headlineHref}">${headline}</a>` : headline;
   return `
     <div class="card">
       ${tag ? `<span class="tag"${tagStyle ? ` style="${tagStyle}"` : ""}>${tag}</span>` : ""}
-      <p class="plain-summary" style="margin-top:0.5rem">${headlineHref ? `<a class="title-link" href="${headlineHref}">${headline}</a>` : headline}</p>
+      <p class="${headlineClass}" style="margin-top:0.5rem">${headlineHtml}</p>
       ${sub ? `<p class="legal-title">${sub}</p>` : ""}
       <div class="meta">${meta}</div>
       ${note ? `<p class="empty-state" style="margin-top:0.5rem">${note}</p>` : ""}
@@ -98,7 +104,7 @@ async function init() {
       ordinanceNumber: n.ordinanceNumber,
       readingStage: n.readingStage,
       title: n.title,
-      plainSummary: null,
+      plainSummary: n.plainSummary || null,
       date: n.date,
       amount: n.amount,
       href: `ordinance.html?number=${encodeURIComponent(n.ordinanceNumber)}`,
@@ -116,6 +122,7 @@ async function init() {
       html: itemCard({
         tag: "Ordinance" + (s.source === "notice" ? " · from a public notice" : ""),
         headline: s.plainSummary || s.title,
+        headlineIsLegalText: !s.plainSummary,
         headlineHref: `ordinance.html?number=${encodeURIComponent(s.ordinanceNumber)}`,
         sub: s.plainSummary ? `#${s.ordinanceNumber} — ${s.title}` : `#${s.ordinanceNumber}`,
         meta: `${formatDate(s.date)}${s.amount ? " · $" + s.amount.toLocaleString("en-US") : ""}`,
@@ -128,6 +135,7 @@ async function init() {
         html: itemCard({
           tag: r.category,
           headline: r.plainSummary || r.title,
+          headlineIsLegalText: !r.plainSummary,
           headlineHref: `meeting.html?id=${encodeURIComponent(r.meetingId)}`,
           sub: r.plainSummary ? `${r.number} — ${r.title}` : null,
           meta: m ? `${formatDate(m.date)} · ${m.type}` : "",
@@ -165,8 +173,10 @@ async function init() {
             itemCard({
               tag: "Introduced, not yet final",
               tagStyle: "background:#fffbeb;color:#92400e",
-              headline: s.title,
+              headline: s.plainSummary || s.title,
+              headlineIsLegalText: !s.plainSummary,
               headlineHref: `ordinance.html?number=${encodeURIComponent(s.ordinanceNumber)}`,
+              sub: s.plainSummary ? `#${s.ordinanceNumber} — ${s.title}` : null,
               meta: `#${s.ordinanceNumber} · introduced ${formatDate(s.date)}${s.amount ? " · $" + s.amount.toLocaleString("en-US") : ""}`,
               note: "A public hearing and final vote are still to come — see the ordinance page for the source notice, which states the hearing date.",
             })

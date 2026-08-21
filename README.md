@@ -1,8 +1,10 @@
-# Elmwood Park Council Tracker
+# Elmwood Park Civic Tracker
 
-Makes Elmwood Park, NJ town council meetings easier to follow: pulls minutes,
-videos, and per-member roll-call votes straight from the Borough's own
-website (elmwoodparknj.us), and updates itself automatically.
+Makes Elmwood Park, NJ local government easier to follow: pulls council
+meeting minutes, videos, per-member roll-call votes, municipal budgets, and
+Zoning/Planning Board decisions straight from the Borough's own website
+(elmwoodparknj.us), and updates itself automatically where the source data
+allows it.
 
 ## How it works
 

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resolutions — Elmwood Park Council Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html"><h1>Elmwood Park Council Tracker</h1></a>
+  <p>Everything the council has passed this term, in plain English — newest first.</p>
+  <nav class="site-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="budget.html">Budget &amp; Taxes</a>
+    <a href="resolutions.html">Resolutions</a>
+    <a href="index.html">Meetings</a>
+    <a href="members.html">Council Members</a>
+    <a href="guide.html">How It Works</a>
+  </nav>
+</header>
+<main>
+  <div class="filters" id="filters"></div>
+  <div id="feed"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+async function init() {
+  const { meetings, resolutions } = await loadData();
+  const container = document.getElementById("feed");
+  const filtersEl = document.getElementById("filters");
+
+  const meetingById = {};
+  meetings.forEach((m) => (meetingById[m.id] = m));
+
+  const items = [...resolutions]
+    .map((r) => ({ ...r, meeting: meetingById[r.meetingId] }))
+    .filter((r) => r.meeting)
+    .sort((a, b) => b.meeting.date.localeCompare(a.meeting.date) || b.number.localeCompare(a.number));
+
+  const categories = [...new Set(resolutions.map((r) => r.category))].sort();
+  let activeCategory = null;
+
+  function voteTally(votes) {
+    const counts = { Aye: 0, Nay: 0, Abstain: 0, Absent: 0 };
+    Object.values(votes || {}).forEach((v) => counts[v] !== undefined && counts[v]++);
+    let summary = `${counts.Aye}-${counts.Nay}`;
+    const extras = [];
+    if (counts.Abstain) extras.push(`${counts.Abstain} abstain`);
+    if (counts.Absent) extras.push(`${counts.Absent} absent`);
+    if (extras.length) summary += ` (${extras.join(", ")})`;
+    return summary;
+  }
+
+  function render() {
+    container.innerHTML = "";
+    const visible = activeCategory ? items.filter((r) => r.category === activeCategory) : items;
+
+    if (visible.length === 0) {
+      container.innerHTML = `<p class="empty-state">No resolutions match that category yet.</p>`;
+      return;
+    }
+
+    visible.forEach((r) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      const bodyHtml = r.plainSummary
+        ? `<p class="plain-summary" style="margin-top:0.5rem"><a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">${r.plainSummary}</a></p><p class="legal-title">${r.number} — ${r.title}</p>`
+        : `<h3 style="margin:0.5rem 0 0.25rem 0"><a class="title-link" href="meeting.html?id=${encodeURIComponent(r.meetingId)}">${r.number} — ${r.title}</a></h3>`;
+
+      card.innerHTML = `
+        <span class="tag">${r.category}</span>
+        ${r.consentAgenda ? '<span class="tag" style="background:#f1f5f9;color:#475569">Consent Agenda</span>' : ""}
+        ${bodyHtml}
+        <div class="meta">
+          ${formatDate(r.meeting.date)} · ${r.meeting.type} · Passed ${voteTally(r.votes)}
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  filtersEl.innerHTML =
+    `<button data-cat="" class="active">All (${items.length})</button>` +
+    categories.map((c) => `<button data-cat="${c}">${c} (${items.filter((r) => r.category === c).length})</button>`).join("");
+  filtersEl.querySelectorAll("button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filtersEl.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeCategory = btn.dataset.cat || null;
+      render();
+    });
+  });
+
+  render();
+}
+init();
+</script>
+</body>
+</html>

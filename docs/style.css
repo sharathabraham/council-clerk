@@ -61,12 +61,15 @@ header.site-header p {
 nav.site-nav {
   margin-top: 0.75rem;
   display: flex;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
+  column-gap: 1.1rem;
 }
 
 nav.site-nav a {
   font-size: 0.9rem;
   opacity: 0.9;
+  white-space: nowrap;
 }
 
 nav.site-nav a:hover {

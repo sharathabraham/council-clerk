@@ -91,6 +91,15 @@ main {
   margin-bottom: 1rem;
 }
 
+.explainer-card {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.explainer-card h3 {
+  color: #92400e;
+}
+
 .card a.title-link {
   color: var(--blue);
   text-decoration: none;

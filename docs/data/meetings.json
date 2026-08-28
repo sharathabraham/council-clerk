@@ -1,5 +1,68 @@
 [
   {
+    "id": "2026-06-18-regular-meeting",
+    "date": "2026-06-18",
+    "type": "Regular Meeting",
+    "phocaDownloadId": "2608",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2608:mayor-council-regular-meeting-minutes-6-18-2026",
+    "agendaUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/8Sz-u6-vuFg"
+  },
+  {
+    "id": "2026-06-04-work-session",
+    "date": "2026-06-04",
+    "type": "Work Session",
+    "phocaDownloadId": "2607",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2607:mayor-council-work-session-meeting-minutes-6-4-2026",
+    "agendaUrl": null,
+    "videoUrl": null
+  },
+  {
+    "id": "2026-05-21-regular-meeting",
+    "date": "2026-05-21",
+    "type": "Regular Meeting",
+    "phocaDownloadId": "2606",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2606:mayor-council-regular-meeting-minutes-5-21-2026",
+    "agendaUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/QrCtJE1Q5a8"
+  },
+  {
+    "id": "2026-05-07-work-session",
+    "date": "2026-05-07",
+    "type": "Work Session",
+    "phocaDownloadId": "2605",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2605:mayor-council-work-session-meeting-minutes-5-7-2026",
+    "agendaUrl": null,
+    "videoUrl": null
+  },
+  {
+    "id": "2026-04-23-meeting",
+    "date": "2026-04-23",
+    "type": "Meeting",
+    "phocaDownloadId": "2604",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2604:mayor-council-special-meeting-minutes-4-23-2026",
+    "agendaUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/zx4fDGQaq7Q"
+  },
+  {
+    "id": "2026-04-16-regular-meeting",
+    "date": "2026-04-16",
+    "type": "Regular Meeting",
+    "phocaDownloadId": "2603",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2603:mayor-council-regular-meeting-minutes-4-16-2026",
+    "agendaUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/_1umyaua3QI"
+  },
+  {
+    "id": "2026-04-02-work-session",
+    "date": "2026-04-02",
+    "type": "Work Session",
+    "phocaDownloadId": "2602",
+    "minutesUrl": "https://www.elmwoodparknj.us/governing-body/minutes/minutes-2026?download=2602:mayor-council-work-session-minutes-4-2-2026",
+    "agendaUrl": null,
+    "videoUrl": null
+  },
+  {
     "id": "2026-03-19-regular-meeting",
     "date": "2026-03-19",
     "type": "Regular Meeting",

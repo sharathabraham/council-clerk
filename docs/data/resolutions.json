@@ -2678,5 +2678,1765 @@
     },
     "meetingId": "2026-01-02-reorganization-meeting",
     "plainSummary": "Appoints Jeanette Randazzo as a full member of the Borough's Cannabis Board for 2026."
+  },
+  {
+    "number": "R-189-26",
+    "title": "BOND ORDINANCE TO AUTHORIZE THE ACQUISITION OF A NEW AMBULANCE IN, BY AND FOR THE BOROUGH OF ELMWOOD PARK, IN THE COUNTY OF BERGEN, NEW JERSEY, TO APPROPRIATE THE SUM OF $400,000 TO PAY THE COST THEREOF, TO MAKE A DOWN PAYMENT, TO AUTHORIZE THE ISSUANCE OF BONDS TO FINANCE SUCH APPROPRIATION AND TO PROVIDE FOR THE ISSUANCE OF BOND ANTICIPATION NOTES IN ANTICIPATION OF THE ISSUANCE OF SUCH BONDS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILWOMAN SHERIDAN",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-16",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-190-26",
+    "title": "AN ORDINANCE TO FIX THE SALARY, WAGE, AND COMPENSATION OF THE OFFICERS, EMPLOYEES, AND SERVANTS OF THE BOROUGH OF ELMWOOD PARK, COUNTY OF BERGEN, STATE OF NEW JERSEY FOR THE YEAR 2026",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-15",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Oswald": "Aye",
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-191-26",
+    "title": "APPROVAL OF PAYROLL",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-192-26",
+    "title": "APPROVAL OF BILLS LIST",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-193-26",
+    "title": "CAPITAL BUDGET AMENDMENT 39",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-194-26",
+    "title": "AUTHORIZE VACATION BUYBACK",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-195-26",
+    "title": "RESOLUTION TO REDEEM THIRD PARTY TAX LIEN",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-196-26",
+    "title": "RESOLUTION TO REDEEM THIRD PARTY TAX LIEN",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-197-26",
+    "title": "APPOINT PART-TIME ELECTRICAL INSPECTOR JOSEPH VIEITEZ BUILDING DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-198-26",
+    "title": "APPOINT PART-TIME BUILDING INSPECTOR SCOTT KARCZ BUILDING DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-199-26",
+    "title": "AUTHORIZE RELEASE OF ROAD OPENING PERFORMANCE BONDS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-200-26",
+    "title": "APPOINTMENT OF FULL-TIME PUBLIC SAFETY TELECOMMUNICATOR POLICE DEPARTMENT FILIP KOWAL",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-201-26",
+    "title": "APPOINT FULL-TIME LABORERS DEPARTMENT OF PUBLIC WORKS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-202-26",
+    "title": "APPOINT PART-TIME SEASONAL WORKERS DEPARTMENT OF PUBLIC WORKS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-203-26",
+    "title": "AUTHORIZE EXECUTION OF CONTRACT WITH BERGEN COUNTY DEPARTMENT OF HEALTH SERVICES (EAP)",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-204-26",
+    "title": "APPOINTMENT OF RECREATION DEPARTMENT STAFF",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-205-26",
+    "title": "APPOINTMENT OF RECREATION STAFF FOR THE 2026 SUMMER PROGRAM RECREATION DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-206-26",
+    "title": "APPOINTMENT OF RECREATION SPRAY PARK STAFF FOR THE 2026 SUMMER PROGRAM RECREATION DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-207-26",
+    "title": "APPOINTMENT OF RECREATION AFTER CARE STAFF FOR THE 2026 SUMMER PROGRAM RECREATION DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-208-26",
+    "title": "RESOLUTION ACCEPTING PROPOSAL OF COMMUNITY GRANTS, PLANNING & HOUSING FOR PROFESSIONAL AFFORDABLE HOUSING ADMINISTRATION SERVICES",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Grants",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-209-26",
+    "title": "RESOLUTION ACCEPTING PROPOSAL OF COMMUNITY GRANTS, PLANNING & HOUSING FOR PROFESSIONAL AFFORDABLE HOUSING REHABILITATION AND ADMINISTRATION SERVICES",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Grants",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-210-26",
+    "title": "APPOINTMENT OF MUNICIPAL HOUSING LIAISON",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-211-26",
+    "title": "AUTHORIZING THE MAYOR TO EXECUTE AN AGREEMENT WITH THE COUNTY OF BERGEN SNOW PLOWING/SALTING SHARED SERVICE AGREEMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-212-26",
+    "title": "RESOLUTION APPROVING ENDORSEMENT IN SUPPORT OF THE STATE OF NEW JERSEY DEPARTMENT OF TRANSPORTATION ROUTE 46 OVER ERIE-LACKAWANNA RAILROAD\u2019 BRIDGE REPLACEMENT PROJECT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-213-26",
+    "title": "APPROVE 2026/2027 NEW AND/OR USED CAR DEALERSHIPS LICENSES",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-214-26",
+    "title": "RENEW LIQUOR LICENSES FOR THE 2025/2026 LICENSE TERM",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-215-26",
+    "title": "RENEW LIQUOR LICENSES FOR THE 2026/2027 LICENSE TERM",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-216-26",
+    "title": "AUTHORIZATION TO EXECUTE AN AGREEMENT WITH ST. LEO\u2019S SCHOOL SCHOOL SECURITY OFFICERS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-217-26",
+    "title": "APPROVE BLOCK PARTY REQUEST",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-218-26",
+    "title": "RESOLUTION TO APPOINT FIREFIGHTERS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-219-26",
+    "title": "MAINTENANCE OF 97 FALMOUTH",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-220-26",
+    "title": "MAINTENANCE OF 4 FREDERICKS COURT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-221-26",
+    "title": "CORRECTIVE RESOLUTION AUTHORIZING TAX EXEMPTION FOR SURVIVING DISABLED VETERAN SPOUSE",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Refunds & Tax",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-222-26",
+    "title": "RESOLUTION TO APPROVE THE CONSENT AGENDA",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Absent",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-06-18-regular-meeting"
+  },
+  {
+    "number": "R-166-26",
+    "title": "CALENDAR YEAR 2026 ORDINANCE TO EXCEED THE MUNICIPAL BUDGET APPROPRIATION LIMITS AND TO ESTABLISH A CAP BANK (N.J.S.A. 40A: 4-45.14)",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN SAIMSON",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-14",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Oswald": "Nay",
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-167-26",
+    "title": "ADOPTION OF THE 2026 MUNICIPAL BUDGET",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN SAIMSON",
+    "consentAgenda": false,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Oswald": "Nay",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-168-26",
+    "title": "AN ORDINANCE TO FIX THE SALARY, WAGE, AND COMPENSATION OF THE OFFICERS, EMPLOYEES, AND SERVANTS OF THE BOROUGH OF ELMWOOD PARK, COUNTY OF BERGEN, STATE OF NEW JERSEY FOR THE YEAR 2026",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-15",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-169-26",
+    "title": "AN ORDINANCE AMENDING SECTION 7-21 (\u201cMULTI-WAY STOP INTERSECTIONS\u201d) TO ADD INTERSECTIONS ON EAST 55TH ST",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-12",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Oswald": "Aye",
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-170-26",
+    "title": "AN ORDINANCE TO AMEND THE CODE OF THE BOROUGH OF ELMWOOD PARK, NEW JERSEY AMENDING THE BOROUGH CODE AND ALL GENERAL ORDINANCES OF THE BOROUGH; MORE SPECIFICALLY, SECTION 4-7.3. LICENSING [ADDED 8-19-2021 BY ORD. NO. 21-13; AMENDED 3-17-2022 BY ORD. NO. 22-041; AMENDED 9-21-2023 BY ORD. NO. 23- 33] TO PERMIT CLASS 6 CANNABIS DELIVERY SERVICES",
+    "movedBy": "COUNCILMAN FASOLO",
+    "secondedBy": "COUNCILMAN OSWALD",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-13",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-171-26",
+    "title": "APPROVAL OF PAYROLL",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-172-26",
+    "title": "APPROVAL OF BILLS LIST",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-173-26",
+    "title": "RESOLUTION AUTHORIZING TAX EXEMPTION FOR SURVIVING DISABLED VETERAN SPOUSE 104 SPIEDEL AVENUE AKA BLOCK 705 LOT 13.01",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Refunds & Tax",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-174-26",
+    "title": "RESOLUTION TO REFUND TAX EXEMPT VETERAN",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Refunds & Tax",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-175-26",
+    "title": "RESOLUTION TO REFUND",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Refunds & Tax",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-176-26",
+    "title": "RESOLUTION TO REDEEM THIRD PARTY TAX LIEN",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-177-26",
+    "title": "RESOLUTION TO REFUND OVERPAYMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Refunds & Tax",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-178-26",
+    "title": "AUTHORIZE PAYMENT ESTIMATE #1\u2013 2024 CDBG ROAD PROGRAM DOREMUS PLACE IMPROVEMENTS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-179-26",
+    "title": "AUTHORIZE PAYMENT ESTIMATE #2\u2013 2024 CDBG ROAD PROGRAM DOREMUS PLACE IMPROVEMENTS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-180-26",
+    "title": "AUTHORIZE PAYMENT ESTIMATE #3 & FINAL CHANGE ORDER #2\u2013 2024 BOROUGH ROAD PROGRAM",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-181-26",
+    "title": "CHIEF FINANCIAL OFFICER/QUALIFIED PURCHASING AGENT CONTRACT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-182-26",
+    "title": "A RESOLUTION REQUESTING PERMISSION FOR THE DEDICATION BY RIDER FOR AFFORDABLE HOUSING TRUST (N.J.S.A.40A:12A-3) TRUST FUND",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-183-26",
+    "title": "ESTABLISHING AND IMPLEMENTING THE 2026 ELMWOOD PARK BOROUGH INTERNSHIP PROGRAM FOR HIGH SCHOOL STUDENTS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-184-26",
+    "title": "APPOINT CROSSING GUARDS FOR THE 2025/2026 SCHOOL YEAR POLICE DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-185-26",
+    "title": "RESIGNATION OF FIREFIGHTER",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Abstain",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Abstain",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-186-26",
+    "title": "RESOLUTION TO APPOINT FIREFIGHTERS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Abstain",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Abstain",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-187-26",
+    "title": "AUTHORIZE ONLINE AUCTION OF SURPLUS PROPERTY",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-188-26",
+    "title": "RESOLUTION TO APPROVE THE CONSENT AGENDA",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-21-regular-meeting"
+  },
+  {
+    "number": "R-165-26",
+    "title": "RESOLUTION TO ENTER INTO AN AGREEMENT WITH ELITE FINANCE GROUP LLC",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-05-07-work-session"
+  },
+  {
+    "number": "R-162-26",
+    "title": "CALENDAR YEAR 2026 ORDINANCE TO EXCEED THE MUNICIPAL BUDGET APPROPRIATION LIMITS AND TO ESTABLISH A CAP BANK (N.J.S.A. 40A: 4-45.14)",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN SAIMSON",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-14",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-23-meeting"
+  },
+  {
+    "number": "R-163-26",
+    "title": "INTRODUCTION OF THE 2026 MUNICIPAL BUDGET",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN SAIMSON",
+    "consentAgenda": false,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Oswald": "Nay",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-23-meeting"
+  },
+  {
+    "number": "R-164-26",
+    "title": "GOVERNING BODY CERTIFICATION OF COMPLIANCE WITH THE UNITED STATES EQUAL EMPLOYMENT OPPORTUNITY COMMISSION\u2019S \u201cEnforcement Guidance on the Consideration of Arrest and Conviction Records in Employment Decisions Under Title VII of the Civil Rights Act of 1964\u201d",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-23-meeting"
+  },
+  {
+    "number": "R-141-26",
+    "title": "AN ORDINANCE AMENDING SECTION 7-21 (\u201cMULTI-WAY STOP INTERSECTIONS\u201d) TO ADD INTERSECTIONS ON EAST 55TH ST",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-12",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-142-26",
+    "title": "AN ORDINANCE TO AMEND THE CODE OF THE BOROUGH OF ELMWOOD PARK, NEW JERSEY AMENDING THE BOROUGH CODE AND ALL GENERAL ORDINANCES OF THE BOROUGH; MORE SPECIFICALLY, SECTION 4-7.3. LICENSING [ADDED 8-19-2021 BY ORD. NO. 21-13; AMENDED 3-17-2022 BY ORD. NO. 22-041; AMENDED 9-21-2023 BY ORD. NO. 23- 33] TO PERMIT CLASS 6 CANNABIS DELIVERY SERVICES",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILWOMAN TROISI",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-13",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-143-26",
+    "title": "AN ORDINANCE TO AMEND AN ORDINANCE ENTITLED, \u201cAN ORDINANCE TO ESTABLISH THE WATER DEPARTMENT OF THE BOROUGH OF ELMWOOD PARK, BERGEN COUNTY, NEW JERSEY, TO FIX THE RATES AND PRICES TO BE CHARGED FOR THE USE OF WATER AND ESTABLISH RULES AND REGULATIONS FOR THE DISTRIBUTION, SUPPLY, USE AND PROTECTION OF SAID WATER AND PENALTIES FOR THE VIOLATION OF CERTAIN SAID RULES AND REGULATIONS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILWOMAN TROISI",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-01",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-144-26",
+    "title": "AN ORDINANCE AMENDING SECTION 22-6.5 (\u201cFAILURE TO COMPLY; PENALTY\u201d) FOR BUILDING DEPARTMENT ENFORCEMENT OF SIDEWALK SNOW REMOVAL AND RELATED MAINTENANCE REQUIREMENTS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILWOMAN TROISI",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-10",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Oswald": "Aye",
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-145-26",
+    "title": "AN ORDINANCE ADOPTING A REDEVELOPMENT PLAN FOR BLOCK 902, LOTS 3 & 4 AS SHOWN ON THE TAX MAP OF THE BOROUGH OF ELMWOOD PARK NEW JERSEY, PURSUANT TO N.J.S.A. 40A:12A-7",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-11",
+    "readingStage": "Second Reading / Final Passage",
+    "votes": {
+      "Pellegrine": "Aye",
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-146-26",
+    "title": "APPROVAL OF PAYROLL",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Budget & Bonds",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-147-26",
+    "title": "APPROVAL OF BILLS LIST",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-148-26",
+    "title": "RESOLUTION TO REDEEM MUNICIPAL TAX LIEN",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-149-26",
+    "title": "AUTHORIZING A GRANT APPLICATION \u2013 BERGEN COUNTY TRUST FUND FY 2026",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Grants",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-150-26",
+    "title": "APPOINTMENT OF RECREATION DEPARTMENT STAFF",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-151-26",
+    "title": "APPROVE ELMWOOD PARK FIRE DEPARTMENT STIPEND PROGRAM \u2013 1ST QUARTER COMPENSATION",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Abstain",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Abstain",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-152-26",
+    "title": "AUTHORIZING ADOPTION OF THE 2026 RECREATION CAMP FEES",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-153-26",
+    "title": "RESOLUTION TO ENTER INTO A SHARED SERVICE AGREEMENT WITH THE TOWNSHIP OF LITTLE FALLS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-154-26",
+    "title": "APPOINT CROSSING GUARDS FOR THE 2025/2026 SCHOOL YEAR POLICE DEPARTMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Appointments",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-155-26",
+    "title": "A RESOLUTION OF THE MAYOR AND COUNCIL OF THE BOROUGH OF ELMWOOD PARK, IN THE COUNTY OF BERGEN, STATE OF NEW JERSEY ADOPTING AMENDED FOURTH ROUND AFFORDABLE HOUSING SPENDING PLAN",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-156-26",
+    "title": "RESOLUTION FOR CONTRACT WITH ELMWOOD PARK HOMEOWNERS ASSOCIATION",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Oswald": "Abstain",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-157-26",
+    "title": "RESOLUTION FOR CONTRACT WITH AARP OF ELMWOOD PARK CHAPTER 3864",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Oswald": "Abstain",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-158-26",
+    "title": "AUTHORIZE ONLINE AUCTION OF SURPLUS PROPERTY",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-159-26",
+    "title": "RESOLUTION AUTHORIZING THE EXECUTION OF A SHARED SERVICES AGREEMENT WITH THE COUNTY OF BERGEN FOR THE USE OF COUNTY-OWNED EQUIPMENT",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Contracts",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-160-26",
+    "title": "AUTHORIZE COIN TOSS EVENTS DEFENDER COMPANY NO.4",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Abstain",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Abstain",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-161-26",
+    "title": "RESOLUTION TO APPROVE THE CONSENT AGENDA",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCLMAN SAIMSON",
+    "consentAgenda": true,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-16-regular-meeting"
+  },
+  {
+    "number": "R-135-26",
+    "title": "PROMOTION TO SERGEANT NICHOLAS CERAVOLO",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-02-work-session"
+  },
+  {
+    "number": "R-136-26",
+    "title": "PROMOTION TO SERGEANT ANDRES SEGOVIA",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-02-work-session"
+  },
+  {
+    "number": "R-137-26",
+    "title": "PROMOTION TO SERGEANT TYLER GRIFFIN",
+    "movedBy": "COUNCILMAN FASOLO",
+    "secondedBy": "COUNCILWOMAN SHERIDAN",
+    "consentAgenda": false,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-02-work-session"
+  },
+  {
+    "number": "R-138-26",
+    "title": "PROMOTION TO SERGEANT RANDY GAWRYLO",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN FASOLO",
+    "consentAgenda": false,
+    "category": "Other",
+    "ordinanceNumber": null,
+    "readingStage": null,
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-02-work-session"
+  },
+  {
+    "number": "R-139-26",
+    "title": "AN ORDINANCE TO AMEND AN ORDINANCE ENTITLED, \u201cAN ORDINANCE TO ESTABLISH THE WATER DEPARTMENT OF THE BOROUGH OF ELMWOOD PARK, BERGEN COUNTY, NEW JERSEY, TO FIX THE RATES AND PRICES TO BE CHARGED FOR THE USE OF WATER AND ESTABLISH RULES AND REGULATIONS FOR THE DISTRIBUTION, SUPPLY, USE AND PROTECTION OF SAID WATER AND PENALTIES FOR THE VIOLATION OF CERTAIN SAID RULES AND REGULATIONS",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILMAN SAIMSON",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-01",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Nay",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-02-work-session"
+  },
+  {
+    "number": "R-140-26",
+    "title": "AN ORDINANCE ADOPTING A REDEVELOPMENT PLAN FOR BLOCK 902, LOTS 3 & 4 AS SHOWN ON THE TAX MAP OF THE BOROUGH OF ELMWOOD PARK NEW JERSEY, PURSUANT TO N.J.S.A. 40A:12A-7",
+    "movedBy": "COUNCIL PRESIDENT PELLEGRINE",
+    "secondedBy": "COUNCILWOMAN SHERIDAN",
+    "consentAgenda": false,
+    "category": "Ordinances",
+    "ordinanceNumber": "26-11",
+    "readingStage": "First Reading",
+    "votes": {
+      "Fasolo": "Aye",
+      "Sheridan": "Aye",
+      "Oswald": "Aye",
+      "Troisi": "Aye",
+      "Saimson": "Aye",
+      "Pellegrine": "Aye"
+    },
+    "plainSummary": null,
+    "meetingId": "2026-04-02-work-session"
   }
 ]
